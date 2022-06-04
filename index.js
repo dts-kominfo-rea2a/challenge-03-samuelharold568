@@ -28,24 +28,26 @@ function listBelanjaan(arrayObject) {
      jumlah = list.harga * list.kuantitas ;
      jumlahBarang.push(jumlah);
   }
+  return jumlahBarang;
 }
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
 function totalBelanjaan(arrayObject) {
-  let totalHarga = [];
-  let jumlah;
+  let jumlahBarang = [];
+  let totalharga;
   let sum = 0;
+  let jumlah = null;
+  for(let list of arrayObject) {
+     jumlah = list.harga * list.kuantitas ;
+     jumlahBarang.push(jumlah);
+  } 
+  
+  for(let i = 0; i < jumlahBarang.length; i++) {
+    sum = sum + jumlahBarang[i];
+    totalharga = sum;
+  }
 
-    for(let list of arrayObject) {
-      jumlah = list.harga * list.kuantitas ;
-      totalHarga.push(jumlah);
-    }
-
-    for(let i = 0; i < totalHarga.length; i++) {
-      sum += totalHarga[i];
-      totalHarga.push(sum);
-    }
-    console.log(totalHarga)
+  return totalharga;
 }
 
 totalBelanjaan(dataBelanjaan);
