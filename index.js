@@ -23,10 +23,12 @@ const dataBelanjaan = [
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
 function listBelanjaan(arrayObject) {
   let jumlahBarang = []
+  let namaItem;
   let jumlah;
   for(let list of arrayObject) {
      jumlah = list.harga * list.kuantitas ;
-     jumlahBarang.push(jumlah);
+     namaItem = `${list.nama} ${jumlah}`
+     jumlahBarang.push(namaItem);
   }
   return jumlahBarang;
 }
