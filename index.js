@@ -27,7 +27,7 @@ function listBelanjaan(arrayObject) {
   let jumlah;
   for(let list of arrayObject) {
      jumlah = list.harga * list.kuantitas ;
-     namaItem = `${list.nama} ${jumlah}`
+     namaItem = `- ${list.nama} ${jumlah}`
      jumlahBarang.push(namaItem);
   }
   return jumlahBarang;
