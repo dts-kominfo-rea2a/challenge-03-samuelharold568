@@ -21,24 +21,34 @@ const dataBelanjaan = [
 ];
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-function listBelanjaan() {
+function listBelanjaan(arrayObject) {
   let jumlahBarang = []
-  let k;
-  for(let i of dataBelanjaan) {
-     k = i.harga * i.kuantitas ;
-     jumlahBarang.push(k);
+  let jumlah;
+  for(let list of arrayObject) {
+     jumlah = list.harga * list.kuantitas ;
+     jumlahBarang.push(jumlah);
   }
-  console.log(jumlahBarang);
 }
-
-listBelanjaan();
-
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-function totalBelanjaan() {
-  
+function totalBelanjaan(arrayObject) {
+  let totalHarga = [];
+  let jumlah;
+  let sum = 0;
+
+    for(let list of arrayObject) {
+      jumlah = list.harga * list.kuantitas ;
+      totalHarga.push(jumlah);
+    }
+
+    for(let i = 0; i < totalHarga.length; i++) {
+      sum += totalHarga[i];
+      totalHarga.push(sum);
+    }
+    console.log(totalHarga)
 }
 
+totalBelanjaan(dataBelanjaan);
 // ! JANGAN DIMODIFIKASI
 const main = () => {
   console.log("Selamat datang customer");
